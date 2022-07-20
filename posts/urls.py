@@ -1,5 +1,6 @@
 from django.urls import path
 from posts import views
+from rest_framework.urlpatterns import format_suffix_patterns
 
 
 urlpatterns = [
@@ -7,3 +8,6 @@ urlpatterns = [
     path("posts/<int:pk>", views.post_detail),
 
 ]
+
+
+urlpatterns = format_suffix_patterns(urlpatterns)
